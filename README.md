@@ -67,7 +67,7 @@ To contribute:
 ## 📸 Preview
 
 1. **lm_pos_auto_mo**: Automates Manufacturing Orders from Point of Sale Orders  
-   ![lm_pos_auto_mo](https://github.com/lemacore/odoo-apps-module/lm_pos_auto_mo/static/description/banner.png)
+   ![lm_pos_auto_mo](lm_pos_auto_mrp/static/description/banner.png)
 
 ---
 
