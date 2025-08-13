@@ -3,7 +3,7 @@
 [![License: LGPL v3](https://img.shields.io/badge/License-LGPL%20v3-blue.svg)](https://www.gnu.org/licenses/lgpl-3.0)
 [![Odoo](https://img.shields.io/badge/Odoo%20Version-16%20%7C%2017%20%7C%2018-purple)](https://www.odoo.com)
 [![Open Source Love](https://img.shields.io/badge/Open%20Source-%F0%9F%92%9A-brightgreen)](https://opensource.org/)
-[![GitHub stars](https://img.shields.io/github/stars/username/odoo-public-modules?style=social)](https://github.com/lemacore/odoo-apps-public.git)
+[![GitHub stars](https://img.shields.io/github/stars/username/odoo-public-modules?style=social)](https://github.com/aldirrss/odoo-apps-module.git)
 
 ---
 
@@ -32,7 +32,7 @@ You can freely **use, learn from, and modify** these modules.
 
 1. **Clone this repository**
    ```bash
-   git clone https://github.com/lemacore/odoo-apps-public.git
+   git clone https://github.com/aldirrss/odoo-apps-module.git
    ```
    > or download in Odoo Apps Store [Odoo Apps Store](https://apps.odoo.com/apps/modules/browse?author=Lema%20Core%20Technologies)
 2. **Copy the desired modules** into your Odoo `addons` directory
