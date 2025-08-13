@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Code by Lema Core Technologies -->
+<odoo>
+    <data>
+
+        <record id="view_pos_pos_form_form_inherit" model="ir.ui.view">
+            <field name="name">pos.order.form.inherit</field>
+            <field name="model">pos.order</field>
+            <field name="inherit_id" ref="point_of_sale.view_pos_pos_form"/>
+            <field name="arch" type="xml">
+                <div name="button_box" position="inside">
+                    <field name="mrp_production_ids" invisible="1"/>
+                    <button class="oe_stat_button" icon="fa-wrench" name="action_open_production" type="object" invisible="not mrp_production_ids">
+                        <div class="o_field_statinfo">
+                            <span class="o_stat_value"><field name="mrp_production_count"/></span>
+                            <span class="o_stat_text">Productions</span>
+                        </div>
+                    </button>
+                </div>
+            </field>
+        </record>
+    </data>
+</odoo>

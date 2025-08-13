@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Code by Lema Core Technologies -->
+<odoo>
+    <data>
+        <!-- Inherit Form View to Modify it -->
+        <record id="res_config_settings_view_form" model="ir.ui.view">
+            <field name="name">res.config.settings.view.form.point_of_sale.inherit.auto_mrp</field>
+            <field name="model">res.config.settings</field>
+            <field name="priority" eval="8"/>
+            <field name="inherit_id" ref="point_of_sale.res_config_settings_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//block[@id='pos_inventory_section']" position="inside">
+                    <setting id="automation_mo_setting" company_dependent="1">
+                        <span class="o_form_label">Manufacturing Management</span>
+                        <i class="fa fa-info-circle me-1" title="This setting is common to only PoS active."
+                           pos-data-toggle="tooltip"/>
+                        <div class="text-muted">
+                            Create manufacturing order automation
+                        </div>
+                        <div class="content-group mt16 row">
+                            <field name="automation_mo_state" colspan="4" widget="radio"/>
+                        </div>
+                    </setting>
+                </xpath>
+
+            </field>
+        </record>
+    </data>
+</odoo>
