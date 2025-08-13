@@ -3,7 +3,7 @@
 [![License: LGPL v3](https://img.shields.io/badge/License-LGPL%20v3-blue.svg)](https://www.gnu.org/licenses/lgpl-3.0)
 [![Odoo](https://img.shields.io/badge/Odoo%20Version-16%20%7C%2017%20%7C%2018-purple)](https://www.odoo.com)
 [![Open Source Love](https://img.shields.io/badge/Open%20Source-%F0%9F%92%9A-brightgreen)](https://opensource.org/)
-[![GitHub stars](https://img.shields.io/github/stars/username/odoo-public-modules?style=social)](https://github.com/username/odoo-public-modules/stargazers)
+[![GitHub stars](https://img.shields.io/github/stars/username/odoo-public-modules?style=social)](https://github.com/lemacore/odoo-apps-public.git)
 
 ---
 
@@ -18,11 +18,11 @@ You can freely **use, learn from, and modify** these modules.
 
 ## 📦 Modules List
 
-| Module Name | Odoo Version | Description           | Status            |
-| ----------- | ------------ | --------------------- | ----------------- |
-| `module_a`  | 16 / 17 / 18 | A module for ...      | ✅ Stable         |
-| `module_b`  | 17 / 18      | Adds features for ... | 🚧 In Development |
-| `module_c`  | 18           | Integration with ...  | ✅ Stable         |
+| Module Name      | Odoo Version | Description                                                     | Status            |
+|------------------|--------------|-----------------------------------------------------------------| ----------------- |
+| `lm_pos_auto_mo` | 18           | Automation of Manufacturing Orders from Point of Sale Orders    | ✅ Stable         |
+| `module_b`       | 17 / 18      | Adds features for ...                                           | 🚧 In Development |
+| `module_c`       | 18           | Integration with ...                                            | ✅ Stable         |
 
 💡 _Check each module folder for detailed documentation and usage examples._
 
@@ -32,8 +32,9 @@ You can freely **use, learn from, and modify** these modules.
 
 1. **Clone this repository**
    ```bash
-   git clone https://github.com/username/odoo-public-modules.git
+   git clone https://github.com/lemacore/odoo-apps-public.git
    ```
+   > or download in Odoo Apps Store [Odoo Apps Store](https://apps.odoo.com/apps/modules/browse?author=Lema%20Core%20Technologies)
 2. **Copy the desired modules** into your Odoo `addons` directory
 3. **Update the apps list** in Odoo
 4. **Install from the Apps menu** as usual
@@ -65,14 +66,15 @@ To contribute:
 
 ## 📸 Preview
 
-> _(Optional)_ — Add screenshots here for each module to showcase features.
+1. **lm_pos_auto_mo**: Automates Manufacturing Orders from Point of Sale Orders  
+   ![lm_pos_auto_mo](https://github.com/lemacore/odoo-apps-public/lm_pos_auto_mo/static/description/banner.png)
 
 ---
 
 ## 📩 Contact
 
 For issues, questions, or suggestions:  
-📧 **Email**: your@email.com  
+📧 **Email**: lemacoreofficial@email.com  
 💬 **GitHub Issues**: [Open an issue](../../issues)
 
 ---
