@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title> Generate Product Barcode</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+          rel="stylesheet"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"/>
+    <style>
+        :root {
+            --primary-color: #5171ee;
+            --bg-white: #fff;
+            --text-color: #121212;
+            --text-color-light: #64728f;
+        }
+
+        body {
+            font-family: "Montserrat", sans-serif;
+        }
+
+        .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+            color: #121212;
+            font-family: Montserrat;
+            font-size: 16px !important;
+            font-weight: 500 !important;
+            border-radius: 30px;
+            line-height: normal;
+            text-transform: capitalize;
+            background-color: #F5F5F5;
+            border: none;
+            margin-bottom: 0;
+            padding: 12px 24px;
+        }
+
+        .nav-tabs .nav-link:focus, .nav-tabs .nav-link:hover {
+            border-color: transparent;
+            isolation: isolate;
+        }
+
+        .nav-tabs .nav-link:focus-visible {
+            border-color: transparent;
+            box-shadow: none;
+        }
+
+        /* owl-carosel */
+        .owl-carousel .owl-nav {
+            position: absolute;
+            top: 42%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-42%);
+        }
+
+        .owl-carousel .owl-nav button.owl-prev {
+            position: absolute;
+            right: -36px;
+            font-size: 28px;
+            background-color: #e4e4e4;
+            border-radius: 20px;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .owl-carousel .owl-nav button.owl-next {
+            position: absolute;
+            left: -36px;
+            font-size: 28px;
+            background-color: #e4e4e4;
+            border-radius: 20px;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="tab-content my-5">
+        <!-- description -->
+        <div class="tab-pane fade show active" id="home" role="tabpanel"
+             aria-labelledby="home-tab">
+            <div class="position-relative m"
+                 style="border-radius: 16px; background: #f9f9f9; padding: 20px 0;">
+                <div class="row " style="padding: 2rem 0rem 0 !important;">
+                    <div class="col-lg-8 mx-auto gap-4 d-flex flex-column align-items-center">
+                        <p class="my-1 text-center text-uppercase"
+                           style="
+                           letter-spacing: 4px !important;
+                           color: #5171ee;
+                           font-weight: bold;
+                           text-align: center;
+                           font-size: 14px;
+                           font-weight: 600;
+                           line-height: 15.96px;
+                           text-transform: uppercase;">
+                            Automation of Manufacturing Orders from Point of Sale Orders
+                        </p>
+                        <h1 class="text-center text-uppercase my-0"
+                            style="
+              color: #121212;
+              font-size: 36px;
+              font-weight: 700;
+              line-height: normal;
+            ">POS auto Manufacturing
+                        </h1>
+                    </div>
+                    <div class="col-lg-12 d-flex justify-content-center align-items-center">
+                        <img src="./assets/brand.png"
+                             alt="Generate Product Barcode"
+                             width="100%"
+                             height="auto"
+                             style="width: 50%"
+                             class="img-responsive"/>
+                    </div>
+                    <div class="col-md-12 text-center">
+                        <a href="mailto:aldirosidsaputra@gmail.com"
+                           target="_blank"
+                           style="background-color: #86597a;
+                                  font-family: Montserrat;
+                                  display: inline-block;
+                                  padding: 7px 33px;
+                                  border: 1px solid #86597a;
+                                  border-radius: 35px;
+                                  text-decoration: none;"
+                           class="mx-1 mb-2 deep-1 deep_hover">
+                            <img class="img"
+                                 style="width: 24px"
+                                 src="./assets/email.svg"/>
+                            <span class="pl-2"
+                                  style="color: #fff; font-size: 16px; vertical-align: middle">Email Us</span>
+                        </a>
+                        <a href=""
+                           target="_blank"
+                           style="background-color: transparent;
+                                  border-radius: 35px;
+                                  font-family: Montserrat;
+                                  display: inline-block;
+                                  padding: 7px 33px;
+                                  border: 1px solid #7F54B3;
+                                  color: #7F54B3;
+                                  text-decoration: none;"
+                           class="mx-1 mb-2 deep-1 deep_hover">
+                            <img class="img"
+                                 style="width: 24px"
+                                 src="./assets/linkedin.svg"/>
+                            <span class="pl-2" style="color: #7F54B3; font-size: 16px; vertical-align: middle">Linkedin</span>
+                        </a>
+                    </div>
+                    <div class="my-3 d-flex align-items-center justify-content-center">
+                        <div class="text-center"
+                             style="background-color:#70629d !important; font-size:0.8rem !important; color:#fff !important; font-weight:500 !important; padding:4px !important; margin:0 3px !important; border-radius:50px !important; min-width:120px !important">
+                            Community
+                        </div>
+                        <div class="text-center"
+                             style="background-color:#8e4f80 !important; color:#fff !important; font-size:0.8rem !important; font-weight:500 !important; padding:4px !important; margin:0 3px !important; border-radius:50px !important; min-width:120px !important">
+                            Enterprise
+                        </div>
+                        <div class="text-center"
+                             style="background-color:#111827 !important; color:#fff !important; font-size:0.8rem !important; font-weight:500 !important; padding:4px !important; margin:0 3px !important; border-radius:50px !important; min-width:120px !important">
+                            Odoo.sh
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- -->
+
+        <!-- screenshot and other -->
+        <div class="my-4 bg-white"
+             style=" border: 1px solid #FFFFFFFF; border-radius: 6px; box-shadow: 0px 8px 20px -4px rgba(0, 0, 0, 0.10); border: 1px solid #FFFFFFFF;">
+            <div>
+                <ul class="nav nav-tabs justify-content-center bg-white py-2"
+                    id="myTab" role="tablist"
+                    style="border-radius: 6px 6px 0 0;">
+                    <li class="nav-item">
+                        <a aria-controls="overview"
+                           aria-bs-selected="true"
+                           class="nav-link active" data-bs-toggle="tab"
+                           href="#overview" id="overview-tab" role="tab"
+                           style="color:#121212; font-weight:500; font-size:16px">
+                            Screenshots</a>
+                    </li>
+                    <li class="nav-item">
+                        <a aria-controls="feature"
+                           aria-bs-selected="false"
+                           class="nav-link py-2" data-bs-toggle="tab"
+                           href="#feature" id="feature-tab" role="tab"
+                           style="color:#121212; font-weight:500; font-size:16px">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a aria-controls="faq" aria-bs-selected="false"
+                           class="nav-link" data-bs-toggle="tab"
+                           href="#faq" id="faq-tab" role="tab"
+                           style="color:#121212; font-weight:500; font-size:16px">
+                            FAQs</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="tab-content p-md-5 p-2 py-3" id="myTabContent">
+                <div aria-labelledby="overview-tab"
+                     class="tab-pane fade show active" id="overview"
+                     role="tabpanel">
+                    <div class="position-relative mb-4"
+                         style="border-radius:10px">
+                        <img alt="acc_bg"
+                             class="w-100 h-100 position-absolute img-fluid left_0"
+                             loading="lazy"
+                             src=""
+                             style="">
+                    </div>
+                    <!-- screenshots section-->
+                    <div class="position-relative mb-4"
+                         style="border-radius:10px; background-color:#fafafa">
+                        <div class="p-md-5 p-3 position-relative">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h1 style="font-weight:bold; font-size:calc(1.1rem + 1vw); line-height:80%; text-align:center; text-transform:capitalize; font-size: 40px;
+                      font-weight: 700;">
+                              <span style="color:#121212; font-size:calc(1.1rem + 1vw)">Configuration Settings at
+                              </span><span style="color: #5171ee; font-size:calc(1.1rem + 1vw)">Point of Sale</span>
+                                    </h1>
+                                </div>
+                                <div class="col-md-12 mb-3">
+                                    <p style="font-weight:400; font-size:16px; line-height:150%; text-align:center;  color:#64728f">
+                                        Configure the settings for generating manufacturing orders from point of sale orders with the options.
+                                    </p>
+                                </div>
+                                <div class="col-md-12 text-center">
+                                    <div class="d-inline-block p-3 shadow-sm"
+                                         style="background-color:#fff; border-radius:10px">
+                                        <img alt="" class="img-fluid"
+                                             loading="lazy"
+                                             src="./assets/screenshots/1.png"
+                                             style="min-height: 1px;">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="position-relative mb-4"
+                         style="border-radius:10px; background-color:#fafafa">
+                        <div class="p-md-5 p-3 position-relative">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h1 style="font-weight:bold; font-size:calc(1.1rem + 1vw); line-height:80%; text-align:center; text-transform:capitalize; font-size: 40px;
+                      font-weight: 700;">
+                              <span style="color:#121212; font-size:calc(1.1rem + 1vw)">
+                                  Configuration Automation MO at
+                              </span><span style="color: #5171ee; font-size:calc(1.1rem + 1vw)">Bill of Materials</span>
+                                    </h1>
+                                </div>
+                                <div class="col-md-12 mb-3">
+                                    <p style="font-weight:400; font-size:16px; line-height:150%; text-align:center;  color:#64728f">
+                                        Configuration to enable products that can generate MO directly from Point of Sale using routing.
+                                    </p>
+                                </div>
+                                <div class="col-md-12 text-center">
+                                    <div class="d-inline-block p-3 shadow-sm"
+                                         style="background-color:#fff; border-radius:10px">
+                                        <img alt="" class="img-fluid"
+                                             loading="lazy"
+                                             src="./assets/screenshots/2.png"
+                                             style="min-height: 1px;">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="position-relative mb-4"
+                         style="border-radius:10px; background-color:#fafafa">
+                        <div class="p-md-5 p-3 position-relative">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h1 style="font-weight:bold; font-size:calc(1.1rem + 1vw); line-height:80%; text-align:center; text-transform:capitalize; font-size: 40px;
+                      font-weight: 700;">
+                              <span style="color:#121212; font-size:calc(1.1rem + 1vw)">
+                                  Checklist Available in
+                              </span><span style="color: #5171ee; font-size:calc(1.1rem + 1vw)">POS and POS Category</span>
+                                    </h1>
+                                </div>
+                                <div class="col-md-12 mb-3">
+                                </div>
+                                <div class="col-md-12 text-center">
+                                    <div class="d-inline-block p-3 shadow-sm"
+                                         style="background-color:#fff; border-radius:10px">
+                                        <img alt="" class="img-fluid"
+                                             loading="lazy"
+                                             src="./assets/screenshots/3.png"
+                                             style="min-height: 1px;">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="position-relative mb-4"
+                         style="border-radius:10px; background-color:#fafafa">
+                        <div class="p-md-5 p-3 position-relative">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h1 style="font-weight:bold; font-size:calc(1.1rem + 1vw); line-height:80%; text-align:center; text-transform:capitalize; font-size: 40px;
+                      font-weight: 700;">
+                              <span style="color:#121212; font-size:calc(1.1rem + 1vw)">
+                                  Only Payment on POS to auto generate
+                              </span><span style="color: #5171ee; font-size:calc(1.1rem + 1vw)">Manufacturing Order</span>
+                                    </h1>
+                                </div>
+                                <div class="col-md-12 mb-3">
+                                    <p style="font-weight:400; font-size:16px; line-height:150%; text-align:center;  color:#64728f">
+                                        Just click order and payment on the related product in POS will automatically generate MO.
+                                    </p>
+                                </div>
+                                <div class="col-md-12 text-center">
+                                    <div class="d-inline-block p-3 shadow-sm"
+                                         style="background-color:#fff; border-radius:10px">
+                                        <img alt="" class="img-fluid"
+                                             loading="lazy"
+                                             src="./assets/screenshots/4a.png"
+                                             style="min-height: 1px;">
+                                        <img alt="" class="img-fluid"
+                                             loading="lazy"
+                                             src="./assets/screenshots/4b.png"
+                                             style="min-height: 1px;">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="position-relative mb-4"
+                         style="border-radius:10px; background-color:#fafafa">
+                        <div class="p-md-5 p-3 position-relative">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h1 style="font-weight:bold; font-size:calc(1.1rem + 1vw); line-height:80%; text-align:center; text-transform:capitalize; font-size: 40px;
+                      font-weight: 700;">
+                              <span style="color:#121212; font-size:calc(1.1rem + 1vw)">
+                                  Smart Button navigation to
+                              </span><span style="color: #5171ee; font-size:calc(1.1rem + 1vw)">Related Manufacturing Order</span>
+                                    </h1>
+                                </div>
+                                <div class="col-md-12 mb-3">
+                                </div>
+                                <div class="col-md-12 text-center">
+                                    <div class="d-inline-block p-3 shadow-sm"
+                                         style="background-color:#fff; border-radius:10px">
+                                        <img alt="" class="img-fluid"
+                                             loading="lazy"
+                                             src="./assets/screenshots/5.png"
+                                             style="min-height: 1px;">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div aria-labelledby="feature-tab"
+                     class="tab-pane fade show py-1" id="feature"
+                     role="tabpanel">
+                    <div class="row py-4">
+                        <!-- Features Section -->
+                        <div class="col-md-6 col-sm-12 p-3">
+                            <div class="d-flex flex-column align-items-start h-100"
+                                 style="padding:30px; border-radius:12px; background-color:#fafafa">
+                                <div class="d-flex align-items-center justify-content-center">
+                                    <div class="d-flex align-items-center justify-content-center "
+                                         style="width:36px; height:36px; border-radius:50%; background-color:#5171ee ; margin-right:10px">
+                                        <i class="fa fa-check-circle"
+                                           style="color:#fff; font-size:14px"></i>
+                                    </div>
+                                    <p style="color:#1A202C; font-weight:600; font-size:1.2rem; margin-bottom:2px">
+                                        Available in Odoo
+                                        Community, Enterprise and
+                                        Odoo.sh.</p>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-12 p-3">
+                            <div class="d-flex flex-column align-items-start h-100"
+                                 style="padding:30px; border-radius:12px; background-color:#fafafa">
+                                <div class="d-flex align-items-center justify-content-center">
+                                    <div class="d-flex align-items-center justify-content-center "
+                                         style="width:36px; height:36px; border-radius:50%; background-color:#5171ee ; margin-right:10px">
+                                        <i class="fa fa-check-circle"
+                                           style="color:#fff; font-size:14px"></i>
+                                    </div>
+                                    <p style="color:#1A202C; font-weight:600; font-size:1.2rem; margin-bottom:2px">
+                                        Automatically generate
+                                        Manufacturing Orders from Point of Sale orders.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-12 p-3">
+                            <div class="d-flex flex-column align-items-start h-100"
+                                 style="padding:30px; border-radius:12px; background-color:#fafafa">
+                                <div class="d-flex align-items-center justify-content-center">
+                                    <div class="d-flex align-items-center justify-content-center "
+                                         style="width:36px; height:36px; border-radius:50%; background-color:#5171ee ; margin-right:10px">
+                                        <i class="fa fa-check-circle"
+                                           style="color:#fff; font-size:14px"></i>
+                                    </div>
+                                    <p style="color:#1A202C; font-weight:600; font-size:1.2rem; margin-bottom:2px">
+                                        Generate Manufacturing Orders based on the product's Bill of Materials.</p>
+                                    </p>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-12 p-3">
+                            <div class="d-flex flex-column align-items-start h-100"
+                                 style="padding:30px; border-radius:12px; background-color:#fafafa">
+                                <div class="d-flex align-items-center justify-content-center">
+                                    <div class="d-flex align-items-center justify-content-center "
+                                         style="width:36px; height:36px; border-radius:50%; background-color:#5171ee ; margin-right:10px">
+                                        <i class="fa fa-check-circle"
+                                           style="color:#fff; font-size:14px"></i>
+                                    </div>
+                                    <p style="color:#1A202C; font-weight:600; font-size:1.2rem; margin-bottom:2px">
+                                        Dynamic configuration options for generating Manufacturing Orders.</p>
+                                    </p>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div aria-labelledby="faq-tab"
+                     class="tab-pane fade show" id="faq"
+                     role="tabpanel">
+                    <div class="row"
+                         style=" background-color:#fff !important">
+                        <div class="col-md-12" aria-labelledby="faq-tab"
+                             id="faq" role="tabpanel">
+                            <div class="accordion mb-4" id="accordion6">
+                                <div style="background-color:#fff">
+                                    <!-- accordian -->
+                                    <div class="accordion"
+                                         id="accordion_faq">
+                                        <!-- Question 1 -->
+                                        <div class=""
+                                             style="margin:1rem 0rem">
+                                            <div aria-expanded="false"
+                                                 class=" card-header collapsed"
+                                                 data-bs-toggle="collapse"
+                                                 data-bs-target="#collapseFAQOne"
+                                                 href="#collapseFAQOne"
+                                                 aria-controls="collapseFAQOne"
+                                                 style="cursor: pointer; background-color:#f8f8f8; border:none; border-top-right-radius:10px; border-top-left-radius:10px; padding: 12px 24px;">
+                                                <a class="card-title text-decoration-none"
+                                                   style="font-size:18px; line-height:30px; font-weight:500; color:#040f3a">
+                                                    What is the purpose of the "POS auto Manufacturing" module?
+                                                    <i class="fa fa-chevron-down float-end" style="font-size:20px; color:#5171ee"></i>
+                                                </a>
+                                            </div>
+                                            <div class="accordion-collapse collapse"
+                                                 aria-labelledby="collapseFAQOne"
+                                                 data-bs-parent="#accordion_faq"
+                                                 id="collapseFAQOne"
+                                                 style=" box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px; border: 1px solid #f8f8f8; border-bottom-right-radius:10px; border-bottom-left-radius:10px">
+                                                <p style=" padding:0.75rem 1.25rem; font-size:16px; line-height:27px;  color:#888; font-weight:normal; border-bottom-right-radius:10px; border-bottom-left-radius:10px">
+                                                    The "POS auto Manufacturing" module is designed to automate the generation of manufacturing orders from point of sale orders, allowing for efficient production management directly from sales transactions.
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <!-- Question 2 -->
+                                        <div style="margin:1rem 0rem">
+                                            <div aria-expanded="false"
+                                                 class="cursor-pointer card-header collapsed"
+                                                 data-bs-toggle="collapse"
+                                                 aria-controls="collapseFAQTwo"
+                                                 data-bs-target="#collapseFAQTwo"
+                                                 style="cursor: pointer; background-color:#f8f8f8; border:1px solid #f8f8f8; border-top-right-radius:10px; border-top-left-radius:10px; padding: 12px 24px">
+                                                <a class="card-title text-decoration-none"
+                                                   style=" font-size:18px; line-height:30px; font-weight:500; color:#040f3a">
+                                                    Is the module available for both Community and Enterprise editions?
+                                                    <i class="fa fa-chevron-down float-end" style="font-size:20px; color:#5171ee"></i>
+                                                </a>
+                                            </div>
+                                            <div class="accordion-collapse collapse"
+                                                 aria-labelledby="collapseFAQTwo"
+                                                 data-bs-parent="#accordion_faq"
+                                                 id="collapseFAQTwo"
+                                                 style="box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px; border: 1px solid #f8f8f8; border-bottom-right-radius:10px; border-bottom-left-radius:10px">
+                                                <p style="padding:0.75rem 1.25rem; font-size:16px; line-height:27px;  color:#888; font-weight:normal; border-bottom-right-radius:10px; border-bottom-left-radius:10px">
+                                                    Yes, it is available for both Odoo Community and Enterprise editions.
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <!-- Question 3 -->
+                                        <div style="margin:1rem 0rem">
+                                            <div aria-expanded="false"
+                                                 class="cursor-pointer card-header collapsed"
+                                                 data-bs-toggle="collapse"
+                                                 aria-controls="collapseFAQThree"
+                                                 data-bs-target="#collapseFAQThree"
+                                                 style="cursor: pointer; background-color:#f8f8f8; border:1px solid #f8f8f8; border-top-right-radius:10px; border-top-left-radius:10px; padding: 12px 24px">
+                                                <a class="card-title text-decoration-none"
+                                                   style=" font-size:18px; line-height:30px; font-weight:500; color:#040f3a">
+                                                    What are the main features of the "POS auto Manufacturing" module?
+                                                    <i class="fa fa-chevron-down float-end" style="font-size:20px; color:#5171ee"></i>
+                                                </a>
+                                            </div>
+                                            <div class="accordion-collapse collapse"
+                                                 aria-labelledby="collapseFAQThree"
+                                                 data-bs-parent="#accordion_faq"
+                                                 id="collapseFAQThree"
+                                                 style="box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px; border: 1px solid #f8f8f8; border-bottom-right-radius:10px; border-bottom-left-radius:10px">
+                                                <p style="padding:0.75rem 1.25rem; font-size:16px; line-height:27px;  color:#888; font-weight:normal; border-bottom-right-radius:10px; border-bottom-left-radius:10px">
+                                                    The main features include automatic generation of manufacturing orders from point of sale orders, integration with product bills of materials, and dynamic configuration options for production management.
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <!-- Question 4 -->
+                                        <div style="margin:1rem 0rem">
+                                            <div aria-expanded="false"
+                                                 class="cursor-pointer card-header collapsed"
+                                                 data-bs-toggle="collapse"
+                                                 aria-controls="collapseFAQFive"
+                                                 data-bs-target="#collapseFAQFive"
+                                                 style="cursor: pointer; background-color:#f8f8f8; border:1px solid #f8f8f8; border-top-right-radius:10px; border-top-left-radius:10px; padding: 12px 24px">
+                                                <a class="card-title text-decoration-none"
+                                                   style=" font-size:18px; line-height:30px; font-weight:500; color:#040f3a">
+                                                    How can I install the "POS auto Manufacturing" module?
+                                                    <i class="fa fa-chevron-down float-end" style="font-size:20px; color:#5171ee"></i>
+                                                </a>
+                                            </div>
+                                            <div class="accordion-collapse collapse"
+                                                 aria-labelledby="collapseFAQFive"
+                                                 data-bs-parent="#accordion_faq"
+                                                 id="collapseFAQFive"
+                                                 style="box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px; border: 1px solid #f8f8f8; border-bottom-right-radius:10px; border-bottom-left-radius:10px">
+                                                <p style="padding:0.75rem 1.25rem; font-size:16px; line-height:27px;  color:#888; font-weight:normal; border-bottom-right-radius:10px; border-bottom-left-radius:10px">
+                                                    You can install the "POS auto Manufacturing" module from the Odoo Apps Store by searching for it and clicking on the "Install" button.
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <!-- Question 4 -->
+                                        <div style="margin:1rem 0rem">
+                                            <div aria-expanded="false"
+                                                 class="cursor-pointer card-header collapsed"
+                                                 data-bs-toggle="collapse"
+                                                 aria-controls="collapseFAQFour"
+                                                 data-bs-target="#collapseFAQFour"
+                                                 style="cursor: pointer; background-color:#f8f8f8; border:1px solid #f8f8f8; border-top-right-radius:10px; border-top-left-radius:10px; padding: 12px 24px">
+                                                <a class="card-title text-decoration-none"
+                                                   style=" font-size:18px; line-height:30px; font-weight:500; color:#040f3a">
+                                                    Can I customize the workflow of the 'POS auto Manufacturing' module to fit my business needs?
+                                                    <i class="fa fa-chevron-down float-end" style="font-size:20px; color:#5171ee"></i>
+                                                </a>
+                                            </div>
+                                            <div class="accordion-collapse collapse"
+                                                 aria-labelledby="collapseFAQFour"
+                                                 data-bs-parent="#accordion_faq"
+                                                 id="collapseFAQFour"
+                                                 style="box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px; border: 1px solid #f8f8f8; border-bottom-right-radius:10px; border-bottom-left-radius:10px">
+                                                <p style="padding:0.75rem 1.25rem; font-size:16px; line-height:27px;  color:#888; font-weight:normal; border-bottom-right-radius:10px; border-bottom-left-radius:10px">
+                                                    Yes, the module offers flexible configuration options, allowing you to adjust manufacturing triggers, order processing rules, and integration settings to match your specific business workflow.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--  -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--  -->
+
+        <!-- related post -->
+        <section class="oe_container mt32">
+        <h2 style="color: #091E42;font-family: &quot;Montserrat&quot;;text-align: center;margin: 25px auto;text-transform: uppercase;" class="oe_slogan">
+            <b>Related Products</b>
+        </h2>
+        <div id="demo" class="row carousel slide mt64 mb32" data-bs-ride="carousel">
+            <!-- The slideshow -->
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="col-xs-12 col-sm-4 col-md-4 mb16 mt16" style="float: left; padding: 10px;">
+                        <a href="https://apps.odoo.com/apps/modules/18.0/lm_generate_product_barcode" target="_blank" style="color: #000; text-decoration: none;">
+                            <div style="border-radius: 6px; padding: 16px; border: 1px solid #cbcbcb;" class="shadow-sm">
+                                <img class="img img-responsive center-block" style=" max-width: 100%;" src="./assets/modules/1.png" />
+                                <h4 class="mt0 text-truncate" style="text-align:center;width:100&#37; margin-bottom: 8px; font-weight: 600; padding-top: 16px; text-decoration:none;font-size: 18px; padding-bottom: 8px; margin-bottom: 0px">
+                                    Generate Product Barcode</h4>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-xs-12 col-sm-4 col-md-4 mb16 mt16" style="float: left; padding: 10px;">
+                        <a href="https://apps.odoo.com/apps/modules/18.0/lm_pos_auto_mrp" target="_blank" style="color: #000; text-decoration: none;">
+                            <div style="border-radius: 6px; padding: 16px; border: 1px solid #cbcbcb;" class="shadow-sm">
+                                <img class="img img-responsive center-block" style=" max-width: 100%;" src="./assets/modules/2.png" />
+                                <h4 class="mt0 text-truncate" style="text-align:center;width:100&#37; margin-bottom: 8px; font-weight: 600; padding-top: 16px; text-decoration:none;font-size: 18px; padding-bottom: 8px; margin-bottom: 0px">
+                                     Scrap Management</h4>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-xs-12 col-sm-4 col-md-4 mb16 mt16" style="float: left; padding: 10px;">
+                        <a  href="https://apps.odoo.com/apps/modules/18.0/lm_scrap_management" target="_blank" style="color: #000; text-decoration: none;">
+                            <div style="border-radius: 6px;padding: 16px; border: 1px solid #cbcbcb;" class="shadow-sm">
+                                <img class="img img-responsive center-block" style=" max-width: 100%;" src="./banner.png"/>
+                                <h4 class="mt0 text-truncate" style="text-align:center;width:100&#37; margin-bottom: 8px; font-weight: 600; padding-top: 16px; text-decoration:none;font-size: 18px; padding-bottom: 8px; margin-bottom: 0px">
+                                    POS Auto MRP</h4>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="col-xs-12 col-sm-4 col-md-4 mb16 mt16" style="float: left; padding: 10px;">
+                        <a href="https://apps.odoo.com/apps/modules/18.0/lm_generate_product_barcode" target="_blank" style="color: #000; text-decoration: none;">
+                            <div style="border-radius: 6px; padding: 16px; border: 1px solid #cbcbcb;" class="shadow-sm">
+                                <img class="img img-responsive center-block" style=" max-width: 100%;" src="./assets/modules/1.png" />
+                                <h4 class="mt0 text-truncate" style="text-align:center;width:100&#37; margin-bottom: 8px; font-weight: 600; padding-top: 16px; text-decoration:none;font-size: 18px; padding-bottom: 8px; margin-bottom: 0px">
+                                    Generate Product Barcode</h4>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-xs-12 col-sm-4 col-md-4 mb16 mt16" style="float: left; padding: 10px;">
+                        <a href="https://apps.odoo.com/apps/modules/18.0/lm_pos_auto_mrp" target="_blank" style="color: #000; text-decoration: none;">
+                            <div style="border-radius: 6px; padding: 16px; border: 1px solid #cbcbcb;" class="shadow-sm">
+                                <img class="img img-responsive center-block" style=" max-width: 100%;" src="./assets/modules/2.png" />
+                                <h4 class="mt0 text-truncate" style="text-align:center;width:100&#37; margin-bottom: 8px; font-weight: 600; padding-top: 16px; text-decoration:none;font-size: 18px; padding-bottom: 8px; margin-bottom: 0px">
+                                     Scrap Management</h4>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-xs-12 col-sm-4 col-md-4 mb16 mt16" style="float: left; padding: 10px;">
+                        <a  href="https://apps.odoo.com/apps/modules/18.0/lm_scrap_management" target="_blank" style="color: #000; text-decoration: none;">
+                            <div style="border-radius: 6px; padding: 16px; border: 1px solid #cbcbcb;" class="shadow-sm">
+                                <img class="img img-responsive center-block" style=" max-width: 100%;" src="./banner.png"/>
+                                <h4 class="mt0 text-truncate" style="text-align:center;width:100&#37; margin-bottom: 8px; font-weight: 600; padding-top: 16px; text-decoration:none;font-size: 18px; padding-bottom: 8px; margin-bottom: 0px">
+                                    POS Auto MRP</h4>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- Left and right controls -->
+            <a class="carousel-control-prev" href="#demo" data-bs-slide="prev" style="margin-left: -30px;width: 35px;color: #000;">
+                <span class="carousel-control-prev-icon">
+<i class="fa fa-chevron-left" style="font-size:24px"></i>
+</span>
+            </a>
+            <a class="carousel-control-next" href="#demo" data-bs-slide="next" style="margin-right: -30px;width: 35px;color: #000;">
+                <span class="carousel-control-next-icon">
+<i class="fa fa-chevron-right" style="font-size:24px"></i>
+</span>
+            </a>
+        </div>
+    </section>
+        <!--  -->
+    </div>
+</div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+<script>
+    $('.owl-carousel').owlCarousel({
+        rtl: true,
+        loop: true,
+        margin: 10,
+        nav: true,
+        responsive: {
+            0: {
+                items: 1
+            },
+            600: {
+                items: 3
+            },
+            1000: {
+                items: 3
+            }
+        }
+    })
+</script>
+</html>
