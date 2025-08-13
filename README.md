@@ -1,4 +1,4 @@
-# 🐍 Odoo Public Modules
+# 🐍 Odoo Apps Modules
 
 [![License: LGPL v3](https://img.shields.io/badge/License-LGPL%20v3-blue.svg)](https://www.gnu.org/licenses/lgpl-3.0)
 [![Odoo](https://img.shields.io/badge/Odoo%20Version-16%20%7C%2017%20%7C%2018-purple)](https://www.odoo.com)
@@ -67,7 +67,7 @@ To contribute:
 ## 📸 Preview
 
 1. **lm_pos_auto_mo**: Automates Manufacturing Orders from Point of Sale Orders  
-   ![lm_pos_auto_mo](https://github.com/lemacore/odoo-apps-public/lm_pos_auto_mo/static/description/banner.png)
+   ![lm_pos_auto_mo](https://github.com/lemacore/odoo-apps-module/lm_pos_auto_mo/static/description/banner.png)
 
 ---
 
