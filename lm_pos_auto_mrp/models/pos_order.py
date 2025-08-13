@@ -22,9 +22,9 @@ class PosOrder(models.Model):
             company_id = order.config_id.company_id or order.env.company
             productions = self.env['mrp.production']
             for line in order.lines:
-                print('Processing line:', line.id)
                 productions |= line._prepare_manufacturing_order(company_id)
-            order.mrp_production_ids = productions
+            if productions:
+                order.mrp_production_ids |= productions
 
     def _compute_mrp_production_count(self):
         for order in self:

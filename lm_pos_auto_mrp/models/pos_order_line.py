@@ -20,14 +20,11 @@ class PosOrderLine(models.Model):
         for line in self:
             # Skip lines without a configuration automation manufacturing order state
             if not line.automation_mo_state:
-                print('Skipping line without automation MO state:', line.id)
                 continue
 
             bom = self.env['mrp.bom']._bom_find(line.product_id, bom_type='normal', company_id=company.id)[
                 line.product_id]
-            print('Found BOM:', bom.id, 'for product:', line.product_id.id)
             if bom.is_auto_generate_mo and bom.picking_type_id:
-                print('Creating production for line:', line.id)
                 production = self.env['mrp.production'].with_user(SUPERUSER_ID).with_company(company).create({
                     'product_id': line.product_id.id,
                     'product_qty': line.qty,
