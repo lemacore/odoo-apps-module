@@ -2,7 +2,7 @@
 # Copyright 2025 Lema Core Technologies
 # Part of Lema Core Technologies. See LICENSE file for full copyright and licensing details.
 {
-    'name': "Quotation Order Sequence | Custom Sequence for Sales Orders",
+    'name': "Quotation Order Sequence | Custom Sequence for Quotation Order",
     'summary': "Custom Sequence for Sales Quotation Orders.",
     'description': """
 This module customizes the sequence for Sales Quotation Orders, allowing for a more organized and traceable sales process.
