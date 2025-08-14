@@ -18,10 +18,11 @@ You can freely **use, learn from, and modify** these modules.
 
 ## 📦 Modules List
 
-| Module Name       | Odoo Version | Description                                                  | Status            |
-|-------------------|--------------|--------------------------------------------------------------| ----------------- |
-| `lm_pos_auto_mo`  | 17 / 18      | Automation of Manufacturing Orders from Point of Sale Orders | ✅ Stable         |
-| `lm_rfq_sequence` | 18           | Custom Sequence for RFQs on Purchase Orders                  | 🚧 In Development |
+| Module Name                  | Odoo Version | Description                                                  | Status            |
+|------------------------------|--------------|--------------------------------------------------------------|-------------------|
+| `lm_pos_auto_mo`             | 18           | Automation of Manufacturing Orders from Point of Sale Orders | ✅ Stable          |
+| `lm_rfq_sequence`            | 18           | Custom Sequence for RFQs on Purchase Orders                  | ✅ Stable          |
+| `lm_sale_quotation_sequence` | 18           | Custom Sequence for Sales Quotation Orders                   | 🚧 In Development |
 
 💡 _Check each module folder for detailed documentation and usage examples._
 
@@ -67,6 +68,7 @@ To contribute:
 
 1. **lm_pos_auto_mo**: Automates Manufacturing Orders from Point of Sale Orders
 2. **lm_rfq_sequence**: Custom Sequence for RFQs on Purchase Orders
+3. **lm_sale_quotation_sequence**: Custom Sequence for Sales Quotation Orders
 
 ---
 
