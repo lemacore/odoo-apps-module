@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Code by Lema Core Technologies -->
+<odoo>
+    <data noupdate="1">
+
+        <record id="sequence_sales_quotation" model="ir.sequence">
+            <field name="name">Sales Quotation</field>
+            <field name="code">sale.order.quotation</field>
+            <field name="prefix">SQ</field>
+            <field name="padding">5</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+    </data>
+</odoo>

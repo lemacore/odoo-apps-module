@@ -9,7 +9,7 @@
     'company': "Lema Core Technologies",
     'maintainer': "Lema Core Technologies",
     'website': "https://www.lemacore.com",
-    'category': 'Custom Modules/Purchase',
+    'category': 'Purchase',
     'version': '1.0',
     'depends': ['purchase'],
     'data': [
