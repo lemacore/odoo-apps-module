@@ -3,7 +3,7 @@
 # Part of Lema Core Technologies. See LICENSE file for full copyright and licensing details.
 {
     'name': "Quotation Order Sequence | Custom Sequence for Quotation Order",
-    'summary': "Custom Sequence for Sales Quotation Orders.",
+    'summary': "Quotation Sequence, Custom Sequence for Quotation Order, Difference Sequence Quotation, Sale Order Sequence Separator, Quotation Number, Quotation Order Number, Quotation Reference",
     'description': """
 This module customizes the sequence for Sales Quotation Orders, allowing for a more organized and traceable sales process.
 It modifies the sequence of sales orders to include a unique reference number for each quotation, enhancing tracking and management capabilities.

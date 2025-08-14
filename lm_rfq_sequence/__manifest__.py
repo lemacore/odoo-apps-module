@@ -3,7 +3,7 @@
 # Part of Lema Core Technologies. See LICENSE file for full copyright and licensing details.
 {
     'name': "RFQ Sequence | RFQ and Purchase Order Sequence | Custom Sequence for RFQ",
-    'summary': "Custom Sequence for RFQ on Purchase Orders.",
+    'summary': "RFQ Sequence, Custom Sequence for RFQ, Difference Sequence RFQ, Purchase Order Sequence Separator, RFQ Number, RFQ Order Number, RFQ Reference",
     'description': "This module customizes the sequence for Request for Quotations (RFQs) in Purchase Orders, allowing for a more organized and traceable procurement process.",
     'author': "Lema Core Technologies",
     'company': "Lema Core Technologies",
