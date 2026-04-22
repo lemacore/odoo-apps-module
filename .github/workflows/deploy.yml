@@ -155,7 +155,8 @@ jobs:
           smtp_port   = int(os.environ.get("SMTP_PORT", "587"))
           smtp_user   = os.environ["SMTP_USER"]
           smtp_pass   = os.environ["SMTP_PASSWORD"]
-          email_from  = os.environ["EMAIL_FROM"]
+          email_from      = os.environ["EMAIL_FROM"]
+          _, email_from_addr = parseaddr(email_from)
           status      = os.environ["DEPLOY_STATUS"]
           color       = "#36a64f" if status == "success" else "#d9534f"
           emoji       = "✅" if status == "success" else "❌"
@@ -202,14 +203,14 @@ jobs:
                   if smtp_port == 465:
                       with smtplib.SMTP_SSL(smtp_server, smtp_port) as s:
                           s.login(smtp_user, smtp_pass)
-                          s.sendmail(email_from, recipient, msg.as_string())
+                          s.sendmail(email_from_addr, recipient, msg.as_string())
                   else:
                       with smtplib.SMTP(smtp_server, smtp_port) as s:
                           s.ehlo()
                           s.starttls()
                           s.ehlo()
                           s.login(smtp_user, smtp_pass)
-                          s.sendmail(email_from, recipient, msg.as_string())
+                          s.sendmail(email_from_addr, recipient, msg.as_string())
                   print(f"✅ Email sent → {recipient}")
               except Exception as e:
                   print(f"❌ Failed to send → {recipient}: {e}")
