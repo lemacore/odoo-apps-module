@@ -3,7 +3,7 @@ name: Odoo CI/CD - Auto Deploy & Upgrade
 on:
   push:
     branches:
-      - main
+      - 18.0
   workflow_dispatch:
     inputs:
       force_modules:
@@ -12,9 +12,6 @@ on:
         default: ""
 
 jobs:
-  # ─────────────────────────────────────────────
-  # JOB 1: Detect changed modules
-  # ─────────────────────────────────────────────
   detect-changes:
     name: 🔍 Detect Changed Modules
     runs-on: ubuntu-latest
@@ -66,9 +63,6 @@ jobs:
             echo "has_changes=true" >> $GITHUB_OUTPUT
           fi
 
-  # ─────────────────────────────────────────────
-  # JOB 2: Deploy to server
-  # ─────────────────────────────────────────────
   deploy:
     name: 🚀 Deploy to Server
     runs-on: ubuntu-latest
@@ -158,9 +152,6 @@ jobs:
           print("🎉 Upgrade completed successfully!")
           EOF
 
-  # ─────────────────────────────────────────────
-  # JOB 3: Send email notification
-  # ─────────────────────────────────────────────
   notify:
     name: 📢 Send Email Notification
     runs-on: ubuntu-latest
@@ -245,9 +236,6 @@ jobs:
                   print(f"❌ Failed to send → {recipient}: {e}")
           PYEOF
 
-  # ─────────────────────────────────────────────
-  # JOB 4: Skip if no module changes detected
-  # ─────────────────────────────────────────────
   no-changes:
     name: ℹ️ No Module Changes Detected
     runs-on: ubuntu-latest
