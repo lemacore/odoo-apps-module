@@ -145,6 +145,7 @@ jobs:
           import smtplib, os
           from email.mime.multipart import MIMEMultipart
           from email.mime.text import MIMEText
+          from email.utils import parseaddr
 
           recipients_raw = os.environ.get("EMAIL_RECIPIENTS", "")
           if not recipients_raw.strip():
