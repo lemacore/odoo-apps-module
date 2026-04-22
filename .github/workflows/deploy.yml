@@ -188,16 +188,28 @@ jobs:
           </div></body></html>
           """
 
-          for recipient in recipients:
+          def build_msg(recipient):
               msg = MIMEMultipart("alternative")
               msg["Subject"] = subject
               msg["From"]    = email_from
               msg["To"]      = recipient
               msg.attach(MIMEText(html, "html"))
+              return msg
+
+          for recipient in recipients:
+              msg = build_msg(recipient)
               try:
-                  with smtplib.SMTP(smtp_server, smtp_port) as s:
-                      s.starttls(); s.login(smtp_user, smtp_pass)
-                      s.sendmail(email_from, recipient, msg.as_string())
+                  if smtp_port == 465:
+                      with smtplib.SMTP_SSL(smtp_server, smtp_port) as s:
+                          s.login(smtp_user, smtp_pass)
+                          s.sendmail(email_from, recipient, msg.as_string())
+                  else:
+                      with smtplib.SMTP(smtp_server, smtp_port) as s:
+                          s.ehlo()
+                          s.starttls()
+                          s.ehlo()
+                          s.login(smtp_user, smtp_pass)
+                          s.sendmail(email_from, recipient, msg.as_string())
                   print(f"✅ Email sent → {recipient}")
               except Exception as e:
                   print(f"❌ Failed to send → {recipient}: {e}")
