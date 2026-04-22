@@ -93,7 +93,7 @@ jobs:
         run: |
           ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no \
             ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} \
-            "cd ${{ secrets.ODOO_PATH }} && docker compose restart ${{ secrets.COMPOSE_SERVICE }}"
+            "docker restart ${{ secrets.COMPOSE_SERVICE }}"
 
       - name: Wait for Odoo to be ready
         run: |
