@@ -46,6 +46,7 @@ Go to: **GitHub repo → Settings → Secrets and variables → Actions → New 
 | `ODOO_DB` | `my_database` | Odoo database name |
 | `ODOO_ADMIN_USER` | `admin` | Odoo admin username |
 | `ODOO_ADMIN_PASSWORD` | `your_password` | Odoo admin password |
+| `UPGRADE_SCRIPT_PATH` | `scripts/upgrade_modules.py` | Path to the upgrade script inside the repository |
 
 ### Email Notifications
 
@@ -97,7 +98,7 @@ cat ~/.ssh/github_deploy
 ## 4. How the Workflow Works
 
 ```
-Push to branch main
+Push to branch 18.0
         │
         ▼
 ┌───────────────────┐
