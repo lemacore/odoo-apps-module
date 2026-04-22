@@ -84,7 +84,7 @@ jobs:
         run: |
           ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no \
             ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} \
-            "cd ${{ secrets.ODOO_PATH }} && git fetch origin && git reset --hard origin/${{ github.ref_name }}"
+            "cd ${{ secrets.ODOO_PATH }} && git fetch origin && git reset --hard origin/${{ secrets.SERVER_BRANCH }}"
 
       - name: Restart Odoo container
         run: |

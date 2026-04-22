@@ -37,6 +37,7 @@ Go to: **GitHub repo → Settings → Secrets and variables → Actions → New 
 |---|---|---|
 | `ODOO_PATH` | `/opt/odoo` | Path to the docker-compose.yml folder on the server |
 | `COMPOSE_SERVICE` | `odoo` or `web` | Odoo service name in docker-compose.yml |
+| `SERVER_BRANCH` | `lemacore` | Branch name on the server's git remote (may differ from GitHub branch) |
 
 ### Odoo Credentials (for XML-RPC upgrade)
 
